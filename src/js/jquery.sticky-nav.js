@@ -12,6 +12,7 @@
       navActiveClass:    'active',   // Selected nav item modifier class
       navStickyClass:    'sticky',   // Sticky nav modifier class
       sectionSelector:   'section'   // Section id, class or tag selector
+      navOffset: this.height()       // offset in px
     };
 
     // Merge options with defaults
@@ -22,7 +23,7 @@
     const $navLinks = $nav.find('a');
     const $sections = $(options.sectionSelector);
 
-    const navHeight = $nav.height();
+    const navHeight = options.navOffset;
     const scrollTopOffset = $sections.first().height() / 2;
 
     let currentScrollPosition = 0;
